@@ -26,29 +26,29 @@ class TicTacToe
    
    
   def input_to_index(user_input)
-  user_input.to_i - 1
+    user_input.to_i - 1
   end
   
   def move(index, current_player = "X")
-  @board[index] = current_player
+    @board[index] = current_player
   end
   
   def position_taken?(index)
-  !(@board[index].nil? || @board[index] == " ")
+    !(@board[index].nil? || @board[index] == " ")
   end
   
   def valid_move?(index)
-  index.between?(0,8) && !position_taken?(index)
+    index.between?(0,8) && !position_taken?(index)
   end
   
   def turn_count
-  turn = 0
-  @board.each do |index|
-    if index == "X" || index == "O"
-      turn += 1
+    turn = 0
+    @board.each do |index|
+      if index == "X" || index == "O"
+        turn += 1
+      end
     end
-  end
-  return turn
+    return turn
   end
   
   def current_player
